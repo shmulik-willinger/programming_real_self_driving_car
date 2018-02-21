@@ -57,11 +57,8 @@ class DBWNode(object):
         rospy.Subscriber("/twist_cmd", TwistStamped, self.twist_cmd_cb)
         rospy.Subscriber("/vehicle/dbw_enabled", Bool, self.dbw_enabled_cb)
 
-        self.controller = Controller(vehicle_mass=vehicle_mass, fuel_capacity=fuel_capacity,
-                                     acceleration_limit=accel_limit, deceleration_limit=decel_limit,
-                                     wheel_base=wheel_base, wheel_radius=wheel_radius,
-                                     steer_ratio=steer_ratio, max_lat_acceleration=max_lat_accel,
-                                     max_steer_angle=max_steer_angle, min_speed=brake_deadband)
+        self.controller = Controller(vehicle_mass, fuel_capacity, accel_limit, decel_limit,
+                                     wheel_base, wheel_radius, steer_ratio, max_lat_accel, max_steer_angle, brake_deadband)
 
         self.current_velocity = None
         self.twist_cmd = None

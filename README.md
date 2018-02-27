@@ -1,4 +1,24 @@
-This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+# System Integration
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+Overview
+---
+This is the final project of the Udacity Self-Driving Car Engineer Nanodegree. In this project, the goal is to program a Real Self-Driving Car by creating ROS nodes to implement core functionality of the vehicle systems. The software pipeline contains traffic light detection and classification, trajectory planning, and control.
+
+![]( https://github.com/shmulik-willinger/programming_real_self_driving_car/blob/master/readme_img/main_sim.jpg?raw=true)
+
+### The team
+
+
+Name 				| Udacity Account Email
+---------------- | ---------------------
+Shmulik Willinger | shmulik83(at)gmail.com
+
+### Software Architecture
+
+![]( https://github.com/shmulik-willinger/programming_real_self_driving_car/blob/master/readme_img/System_Architecture_Diagram.jpg?raw=true)
+
+## Installation
 
 Please use **one** of the two installation options, either native **or** docker installation.
 

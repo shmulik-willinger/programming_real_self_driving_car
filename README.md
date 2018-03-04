@@ -13,6 +13,7 @@ This is the final project of the Udacity Self-Driving Car Engineer Nanodegree. I
 Name 				| Udacity Account Email
 ---------------- | ---------------------
 Shmulik Willinger | shmulik83(at)gmail.com
+Greg Yeutter | yeutterg(at)gmail.com
 
 ### Software Architecture
 

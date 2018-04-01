@@ -45,6 +45,8 @@ class DBWNode(object):
         steer_ratio = rospy.get_param('~steer_ratio', 14.8)
         max_lat_accel = rospy.get_param('~max_lat_accel', 3.)
         max_steer_angle = rospy.get_param('~max_steer_angle', 8.)
+        min_speed = 0.1
+        brake_deadband = rospy.get_param('~brake_deadband', .1)
 
         # Subscribe to all the topics we need
         rospy.Subscriber("/current_velocity", TwistStamped, self.current_velocity_cb)
@@ -56,7 +58,8 @@ class DBWNode(object):
         self.steer_pub = rospy.Publisher('/vehicle/steering_cmd', SteeringCmd, queue_size=1)
         self.throttle_pub = rospy.Publisher('/vehicle/throttle_cmd', ThrottleCmd, queue_size=1)
 
-        self.controller = Controller(vehicle_mass, fuel_capacity, brake_deadband, decel_limit, accel_limit,
+        # Create `Controller` object
+        self.controller = Controller(vehicle_mass, fuel_capacity, min_speed, brake_deadband, decel_limit, accel_limit,
                                      wheel_base, wheel_radius, steer_ratio, max_lat_accel, max_steer_angle)
 
         self.current_velocity = None
@@ -67,7 +70,7 @@ class DBWNode(object):
 
 
     def loop(self):
-        rate = rospy.Rate(50) # 50Hz
+        rate = rospy.Rate(50) # reduced from 50 for performance
         while not rospy.is_shutdown():
             cur_time = rospy.Time().now()
             time_span = cur_time - self.last_time
@@ -89,8 +92,9 @@ class DBWNode(object):
     def current_velocity_cb(self, velocity):
         self.current_velocity = velocity
 
-    def twist_cmd_cb(self, twist):
-        self.twist_cmd = twist
+    def twist_cmd_cb(self, msg):
+        self.twist_cmd = msg
+	   #rospy.loginfo("Twist: " + str(self.twist_cmd))
 
     def publish(self, throttle, brake, steer):
         tcmd = ThrottleCmd()

@@ -1,5 +1,6 @@
 Header header
 geometry_msgs/PoseStamped pose
+int32 closest_stop_waypoint
 uint8 state
 
 uint8 UNKNOWN=4

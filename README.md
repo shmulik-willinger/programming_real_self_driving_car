@@ -5,7 +5,7 @@ Overview
 ---
 This is the final project of the Udacity Self-Driving Car Engineer Nanodegree. In this project, the goal is to program a Real Self-Driving Car by creating ROS nodes to implement core functionality of the vehicle systems. The software pipeline contains traffic light detection and classification, trajectory planning, and control.
 
-![]( https://github.com/shmulik-willinger/programming_real_self_driving_car/blob/master/readme_img/main_sim.jpg?raw=true)
+![](/readme_img/main_sim.jpg)
 
 ### The team
 
@@ -14,10 +14,13 @@ Name 				| Udacity Account Email
 ---------------- | ---------------------
 Shmulik Willinger | shmulik83(at)gmail.com
 Greg Yeutter | yeutterg(at)gmail.com
+Scott Clegg | scott.c(at)cox.net
+Apostolos Georgiadis | georgiadis.it(at)gmail.com
+Or Khafi | okhafi(at)gmail.com
 
 ### Software Architecture
 
-![]( https://github.com/shmulik-willinger/programming_real_self_driving_car/blob/master/readme_img/System_Architecture_Diagram.jpg?raw=true)
+![](/readme_img/System_Architecture_Diagram.jpg)
 
 ## Installation
 
